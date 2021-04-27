@@ -32,10 +32,28 @@ h1, h2, strong {
     margin-bottom: 0;
 }
 
+.page-title,
+.subtitle {
+    font-weight: 700;
+    color: #000;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
 .section__title {
     font-size: 1.125rem;
     color: #000;
     margin-top: 1.25rem;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2em;
 }
 
 /* buttons */
@@ -298,4 +316,23 @@ General Layout
     .col:first-child {
         grid-column: 2 / span 1;
     }
+}
+
+/* main area */
+
+.main {
+    margin-bottom: 2em;
+}
+
+.main > * {
+    grid-column: 2 / -2;
+}
+
+.main-image {
+    max-width: 100%;
+    display: block;
+}
+
+.main-text .section__title {
+    margin-top: 2em;
 }

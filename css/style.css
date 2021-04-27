@@ -98,6 +98,7 @@ General Layout
     bottom: 0;
     left: 100%;
     transform: translateX(0);
+    transition: transform 250ms;
 }
 
 .navigation-open {
@@ -136,6 +137,40 @@ General Layout
     cursor: pointer;
     padding: .5em;
     position: absolute;
+}
+
+.open-nav {
+    border: 0;
+    background: 0;
+    color: #fff;
+    cursor: pointer;
+    padding: .5em;
+    margin-left: auto;
+    font-size: 1.5em;
+}
+
+@media (min-width: 600px) {
+    .open-nav,
+    .close-nav {
+        display: none;
+    }
+
+    .nav {
+        position: initial;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .nav__item {
+        margin-left: 2em;
+    }
+
+    .nav__link {
+        font-size: 1rem;
+    }
 }
 
 /* footer */

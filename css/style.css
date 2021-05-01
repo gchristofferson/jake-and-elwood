@@ -13,6 +13,10 @@ body {
     line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /* ===========================
 Typography
@@ -38,11 +42,23 @@ h1, h2, strong {
     color: #000;
     line-height: 1.4em;
     text-align: center;
+    grid-column: 2 / -2;
 }
 
 .page-title {
     font-size: 3rem;
-    margin-bottom: 0;
+    margin-bottom: .5em;
+    justify-self: center;
+
+}
+
+.page-title::after {
+    content: "";
+    display: block;
+    width: calc(100% + 30px);
+    height: 30px;
+    background: var(--accent-clr);
+    margin-top: -35px;
 }
 
 .section__title {
@@ -51,9 +67,28 @@ h1, h2, strong {
     margin-top: 1.25rem;
 }
 
+.section__title::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 10px;
+    background: var(--accent-clr);
+}
+
+.section__title--center::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section__title:first-child {
+    margin-top: 0;
+}
+
 .subtitle {
     font-size: 1.125rem;
-    margin-bottom: 2em;
+    margin: .5em auto 2em;
+    max-width: 630px;
 }
 
 /* buttons */
@@ -318,10 +353,10 @@ General Layout
     }
 }
 
-/* main area */
+/* template page */
 
 .main {
-    margin-bottom: 2em;
+    padding: 4em 0;
 }
 
 .main > * {
@@ -329,10 +364,17 @@ General Layout
 }
 
 .main-image {
-    max-width: 100%;
-    display: block;
+    margin-bottom: 2em;
+    box-shadow: 5px 5px 0 black, 10px 10px 0 var(--accent-clr);
 }
 
-.main-text .section__title {
-    margin-top: 2em;
+@media (min-width: 600px) {
+
+    .main-image {
+        grid-column: 2 / span 1;
+    }
+
+    .main-text {
+        grid-column: 3 / span 2;
+    }
 }
